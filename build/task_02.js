@@ -1,12 +1,12 @@
 "use strict";
-class User {
-    user;
-    email;
-    constructor(user, email) {
-        this.user = user;
-        this.email = email;
+class User_task02 {
+    user_task02;
+    email_task02;
+    constructor(user_task02, email_task02) {
+        this.user_task02 = user_task02;
+        this.email_task02 = email_task02;
     }
 }
-let c1 = new User("Rodrigo Sousa Luz", "rodrigolluzdevr@gmail.com");
-console.log(c1.user);
-console.log(c1.email);
+let c1 = new User_task02("Rodrigo Sousa Luz", "rodrigolluzdevr@gmail.com");
+console.log(c1.user_task02);
+console.log(c1.email_task02);

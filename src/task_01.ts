@@ -1,9 +1,9 @@
-const nome = "Rodrigo Sousa Luz";
-const canal = "rodrigolluzdevr";
-const linguagem = "Typescript";
+const name_task01 = "Rodrigo Sousa Luz";
+const channel_task01 = "rodrigolluzdevr";
+const language_task01 = "Typescript";
 
-console.log("Nome do Youtuber: ", nome);
+console.log("You tuber: ", name_task01);
 
-console.log("Nome do canal: ",canal);
+console.log("Channel: ",channel_task01);
 
-console.log("Linguagem escolhida: ", linguagem);
+console.log("Language: ", language_task01);
