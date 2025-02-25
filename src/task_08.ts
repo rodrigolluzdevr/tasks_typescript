@@ -2,13 +2,13 @@
 const currentTime = new Date();
 
 enum week{
-    sunday=0,
-    monday=1,
-    tuesday=2,
-    wednesday=3,
-    thursday=4,
-    friday=5,
-    saturday=6
+    sunday,
+    monday,
+    tuesday,
+    wednesday,
+    thursday,
+    friday,
+    saturday
 }
 
 // verifide day in the week
