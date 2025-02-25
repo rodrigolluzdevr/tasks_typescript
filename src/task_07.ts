@@ -1,3 +1,4 @@
+// variables and object
 let name_task07:string = "Rilix Ltda";
 let adress_task07:string = "Rua Jose Belegante, 85 - Centro, Santa Terezinha - SC, 89.199-000";
 let cep_task07:number = 89199000;
