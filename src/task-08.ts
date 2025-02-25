@@ -11,9 +11,7 @@ enum week{
     saturday
 }
 
-// verifide day in the week
 let dayOfweek:string = week[currentTime.getDay()];
 
 console.log(currentTime)
-
 console.log(dayOfweek);

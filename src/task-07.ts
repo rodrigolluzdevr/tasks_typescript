@@ -10,4 +10,5 @@ let company = {
     cep_task07,
     status_task07
 };
+
 console.log(company.name_task07);

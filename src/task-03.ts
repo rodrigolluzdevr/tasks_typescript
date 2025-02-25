@@ -3,7 +3,6 @@ let name_task03 : string;
 let adress_task03 : string;
 let cep : string;
 
-
 name_task03 = "Tarcisio Freitas";
 adress_task03 = "Rua Santa Catarina, Blumenau, Santa Catarina";
 cep = "00000-000"
