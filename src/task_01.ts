@@ -1,3 +1,4 @@
+// task constants
 const name_task01 = "Rodrigo Sousa Luz";
 const channel_task01 = "rodrigolluzdevr";
 const language_task01 = "Typescript";

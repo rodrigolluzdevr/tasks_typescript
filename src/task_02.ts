@@ -1,3 +1,4 @@
+// task class and constructor
 class User_task02{
     user_task02 : string
     email_task02 : string

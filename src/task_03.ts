@@ -1,3 +1,4 @@
+// task variables and phrases 
 let name_task03 : string;
 let adress_task03 : string;
 let cep : string;
