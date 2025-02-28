@@ -2,11 +2,11 @@
 class Account {
     holder;
     accountNumber;
-    valueAccount;
+    balance;
     constructor(holder) {
         this.holder = holder;
         this.accountNumber = this.generateAccountNumber();
-        this.valueAccount = 0;
+        this.balance = 0;
     }
     generateAccountNumber() {
         return Math.floor(Math.random() * 100000) + 1;
@@ -14,57 +14,58 @@ class Account {
     info() {
         console.log(`Holder: ${this.holder}`);
         console.log(`Account: ${this.accountNumber}`);
-        console.log(`Balance: ${this.valueAccount}`);
+        console.log(`Balance: ${this.balance}`);
     }
     get viewBalance() {
-        return this.valueAccount;
+        return this.balance;
     }
     deposit(amount) {
         if (amount > 0) {
-            this.valueAccount += amount;
-        }
-        else if (amount > 1000) {
-            console.log('Value invalid, the operation limit for PF has to be less than 1000.');
+            this.balance += amount;
         }
         else {
-            console.log('The value entered is invalid, the value is less than zero.');
+            console.log('Invalid value. The amount must be greater than zero.');
         }
     }
-    withdrawal(amount) {
-        if (amount < this.valueAccount) {
-            this.valueAccount -= amount;
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.balance) {
+            this.balance -= amount;
         }
         else {
-            console.log('the value entered is invalid, is higher than the value in account.');
+            console.log('Invalid withdrawal. Insufficient balance or amount must be greater than zero.');
         }
     }
 }
 class PFAccount extends Account {
+    taxRate = 0.02;
     cpf;
     constructor(cpf, holder) {
         super(holder);
         this.cpf = cpf;
     }
+    calculateTax(value) {
+        return value * this.taxRate;
+    }
     info() {
         console.log('----------------------');
-        console.log('Tipo: PF');
+        console.log('Type: PF');
         console.log(`CPF: ${this.cpf}`);
         super.info();
     }
     deposit(amount) {
-        if (amount > 0 && amount < 1000) {
+        if (amount > 0 && amount <= 1000) {
             super.deposit(amount);
         }
         else {
-            console.log('Value invalid, he value entered has to be greater than zero and less than 1000.');
+            console.log('Invalid deposit. The amount must be between 1 and 1000.');
         }
     }
-    withdrawal(amount) {
-        if (amount < this.valueAccount) {
-            super.withdrawal(amount);
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.balance) {
+            super.withdraw(amount);
         }
         else {
-            console.log('Insufficient balance.');
+            console.log('Insufficient balance or invalid withdrawal amount.');
         }
     }
 }
@@ -76,35 +77,35 @@ class PJAccount extends Account {
     }
     info() {
         console.log('----------------------');
-        console.log('Tipo: PJ');
+        console.log('Type: PJ');
         console.log(`CNPJ: ${this.cnpj}`);
         super.info();
     }
     deposit(amount) {
-        if (amount > 0 && amount < 10000) {
+        if (amount > 0 && amount <= 10000) {
             super.deposit(amount);
         }
         else {
-            console.log('Value invalid, he value entered has to be greater than zero and less than 10000.');
+            console.log('Invalid deposit. The amount must be between 1 and 10,000.');
         }
     }
-    withdrawal(amount) {
-        if (amount < this.valueAccount) {
-            super.withdrawal(amount);
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.balance) {
+            super.withdraw(amount);
         }
         else {
-            console.log('Insufficient balance.');
+            console.log('Insufficient balance or invalid withdrawal amount.');
         }
     }
 }
 const client01 = new PFAccount(723, 'Rodrigo Sousa Luz');
 const client02 = new PJAccount(105, 'Rilix Corp');
 client01.deposit(800);
-client01.withdrawal(500);
+client01.withdraw(500);
 client02.deposit(9000);
-client02.withdrawal(3500);
+client02.withdraw(3500);
 client01.info();
 client02.info();
 console.log('--------------------------------------------');
-console.log(`The value of the ${client01.holder} is ${client01.viewBalance}.`);
-console.log(`The value of the ${client02.holder} is ${client02.viewBalance}.`);
+console.log(`The balance of ${client01.holder} is ${client01.viewBalance}.`);
+console.log(`The balance of ${client02.holder} is ${client02.viewBalance}.`);

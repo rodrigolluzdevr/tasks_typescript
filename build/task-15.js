@@ -1,0 +1,10 @@
+"use strict";
+let courseJavascript;
+let courseGolang;
+let Design;
+courseJavascript = { title: "javascript", NumbersOfStudents: 20, languages: "js" };
+courseGolang = { title: "golang", NumbersOfStudents: 25, languages: "go" };
+Design = { title: "Design", NumbersOfStudents: 10, panels: "figma" };
+console.log(courseJavascript);
+console.log(courseGolang);
+console.log(Design);
