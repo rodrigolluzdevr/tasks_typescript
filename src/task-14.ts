@@ -1,7 +1,7 @@
 // Bank Operations
-class Account {
+abstract class Account {
     public holder: string;
-    protected accountNumber: number;
+    private readonly accountNumber: number;
     protected valueAccount: number;
   
     constructor(holder: string) {
@@ -20,8 +20,8 @@ class Account {
       console.log(`Balance: ${this.valueAccount}`);
     }
   
-    public viewBalance(): void {
-      console.log(`The balance actual in account ${this.holder} is: ${this.valueAccount}`);
+    get viewBalance(): number {
+      return this.valueAccount;
     }
   
     protected deposit(amount: number): void {
@@ -116,7 +116,10 @@ client01.withdrawal(500);
 client02.deposit(9000);
 client02.withdrawal(3500);
 
-client01.viewBalance();
-client02.viewBalance();
+client01.info();
+client02.info();
 
-  
+console.log('--------------------------------------------')
+
+console.log(`The value of the ${client01.holder} is ${client01.viewBalance}.`);
+console.log(`The value of the ${client02.holder} is ${client02.viewBalance}.`);

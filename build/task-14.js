@@ -16,8 +16,8 @@ class Account {
         console.log(`Account: ${this.accountNumber}`);
         console.log(`Balance: ${this.valueAccount}`);
     }
-    viewBalance() {
-        console.log(`The balance actual in account ${this.holder} is: ${this.valueAccount}`);
+    get viewBalance() {
+        return this.valueAccount;
     }
     deposit(amount) {
         if (amount > 0) {
@@ -103,5 +103,8 @@ client01.deposit(800);
 client01.withdrawal(500);
 client02.deposit(9000);
 client02.withdrawal(3500);
-client01.viewBalance();
-client02.viewBalance();
+client01.info();
+client02.info();
+console.log('--------------------------------------------');
+console.log(`The value of the ${client01.holder} is ${client01.viewBalance}.`);
+console.log(`The value of the ${client02.holder} is ${client02.viewBalance}.`);
