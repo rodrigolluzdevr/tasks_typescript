@@ -62,15 +62,15 @@ class Account {
         if (amount > 0 && amount < 1000) {
           super.deposit(amount);
         } else {
-          console.log('Value invalid, he value entered has to be greater than zero and less than 1000.')
+          console.log('Value invalid, he value entered has to be greater than zero and less than 1000.');
         }
     }
     
     public withdrawal (amount: number) {
         if (amount < this.valueAccount) {
-            super.withdrawal(amount)
+            super.withdrawal(amount);
         } else {
-            console.log('Insufficient balance.')
+            console.log('Insufficient balance.');
         }
     }
   }
@@ -94,27 +94,27 @@ class Account {
       if (amount > 0 && amount < 10000) {
         super.deposit(amount);
       } else {
-        console.log('Value invalid, he value entered has to be greater than zero and less than 10000.')
+        console.log('Value invalid, he value entered has to be greater than zero and less than 10000.');
       }
     }
 
     public withdrawal (amount: number) {
         if (amount < this.valueAccount) {
-            super.withdrawal(amount)
+            super.withdrawal(amount);
         } else {
-            console.log('Insufficient balance.')
+            console.log('Insufficient balance.');
         }
     }
   }
   
-  const client01 = new PFAccount(723, 'Rodrigo Sousa Luz');
-  const client02 = new PJAccount(105, 'Rilix Corp');
+const client01 = new PFAccount(723, 'Rodrigo Sousa Luz');
+const client02 = new PJAccount(105, 'Rilix Corp');
 
-client01.deposit(800)
-client01.withdrawal(500)
+client01.deposit(800);
+client01.withdrawal(500);
 
-client02.deposit(9000)
-client02.withdrawal(3500)
+client02.deposit(9000);
+client02.withdrawal(3500);
 
 client01.viewBalance();
 client02.viewBalance();
