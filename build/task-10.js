@@ -1,14 +1,22 @@
 "use strict";
+function division(n1, n2) {
+    return n1 / n2;
+}
 function login(user, password) {
     console.log(`user: ${user}`);
     console.log(`password: ${password}`);
 }
-login('rodrigo', 'Senha@123');
-function division(n1, n2) {
-    let r = n1 / n2;
-    return r;
+function newUser(user, pass, name) {
+    const dados = {
+        user,
+        pass,
+        name,
+    };
+    console.log(dados);
 }
-let result_01 = division(10, 2);
-let result_02 = division(100, 10).toString();
-console.log(result_01);
-console.log(result_02);
+const result01 = division(10, 2);
+const result02 = division(100, 10).toString();
+console.log(result01);
+console.log(result02);
+login("rodrigo", "Senha@123");
+newUser("yasmin", "Senha@123");

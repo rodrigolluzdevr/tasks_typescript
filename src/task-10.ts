@@ -1,19 +1,29 @@
-// functions + methods interface
+// Functions
+function division(n1: number, n2: number): number {
+    return n1 / n2;
+}
 
-function login(user: string, password: string) :void{
+function login(user: string, password: string): void {
     console.log(`user: ${user}`);
     console.log(`password: ${password}`);
 }
 
-login('rodrigo', 'Senha@123');
-
-function division(n1: number, n2: number):number{
-    let r= n1/n2;
-    return r
+function newUser(user: string, pass: string, name?: string): void {
+    const dados = {
+        user,
+        pass,
+        name,
+    };
+    console.log(dados);
 }
 
-let result_01: number = division(10, 2)
-let result_02: string = division(100, 10).toString();
+// Exec
+const result01: number = division(10, 2);
+const result02: string = division(100, 10).toString();
 
-console.log(result_01)
-console.log(result_02)
+console.log(result01);
+console.log(result02);
+
+login("rodrigo", "Senha@123");
+
+newUser("yasmin", "Senha@123");
